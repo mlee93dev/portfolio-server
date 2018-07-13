@@ -1,12 +1,14 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const hbs = require('hbs');
 
 let app = express();
 
 const port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname));
+app.set('view engine', 'hbs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -19,7 +21,7 @@ app.use(function (req, res, next) {
 });
 
 app.get('/', (req, res) => {
-  res.render('index.html');
+  res.render('index.hbs');
 });
 
 app.post('/', (req, res) => {
