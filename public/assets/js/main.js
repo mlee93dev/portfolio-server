@@ -387,10 +387,6 @@
 
 		// Initialize.
 
-			// Hide main, articles.
-				$main.hide();
-				$main_articles.hide();
-
 			// Initial article.
 				if (location.hash != ''
 				&&	location.hash != '#')
