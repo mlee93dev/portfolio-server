@@ -18,6 +18,10 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.get('/', (req, res) => {
+  res.render('index.html');
+});
+
 app.post('/', (req, res) => {
   try {
     const transporter = nodemailer.createTransport({
