@@ -43,7 +43,7 @@ app.post('/', (req, res) => {
         console.log(error);
         throw new Error('There was an error sending the email.');
       } 
-      res.status(200).send();
+      res.status(200).render('index.html').send();
     });
 
   } catch (e) {
