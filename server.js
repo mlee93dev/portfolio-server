@@ -10,14 +10,6 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Expose-Headers', 'x-auth');
-  res.header('Access-Control-Allow-Headers', 'Origin, x-auth, X-Requested-With, Content-Type, Accept');
-  res.header('Access-Control-Allow-Methods', 'POST, DELETE, OPTIONS');
-  next();
-});
-
 app.get('/', (req, res) => {
   res.render('index.html');
 });
@@ -44,7 +36,7 @@ app.post('/', (req, res) => {
         throw new Error('There was an error sending the email.');
       } 
     });
-    res.status(200).send();
+    res.status(200).send('Your email was sent!');
   } catch (e) {
     console.log(e);
     res.status(400).send({'message': e.message});
