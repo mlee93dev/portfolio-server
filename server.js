@@ -37,7 +37,7 @@ app.post('/', (req, res) => {
       } 
     });
     const msg = 'Click here to return to the site'
-    res.status(200).send('Your email was sent!' + '/n/n' +
+    res.status(200).send('Your email was sent!' + '\n\n' +
      msg.link('https://mlee93dev.github.io/'));
   } catch (e) {
     console.log(e);
